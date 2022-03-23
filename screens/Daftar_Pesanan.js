@@ -3,11 +3,11 @@ import { Text, View, SafeAreaView, TextInput, TouchableOpacity } from 'react-nat
 import styles from '../style/global';
 import { Fontisto, Feather} from '@expo/vector-icons';
 
-export default function Detail({navigation}){
+export default function Daftar_Pesanan({navigation}){
     return(
         <SafeAreaView >
             <View style={styles.cont3}>
-                <View style={[styles.input, styles.detail,]}>
+                <View style={[styles.input]}>
                     <Text style={styles.subt_ps}>Bakauheni </Text>
                     <Fontisto name="arrow-right-l" size={24} color="black" />
                     <Text style={styles.subt_ps}>Merak </Text>
@@ -20,6 +20,7 @@ export default function Detail({navigation}){
                     <Text>Layanan</Text>
                     <Text>xxxxx</Text>
                     <View style={styles.Line}></View>
+                    <Text>Dewasa</Text>
                 </View>
                 
             </View>

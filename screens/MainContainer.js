@@ -1,19 +1,20 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Fontisto,FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Fontisto,FontAwesome5} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-//screens
-import Detail from './Detail';
+
+//import screens
+import Daftar_Pesanan from './Daftar_Pesanan';
 import Bayar from './Bayar';
-import Menu_awal from './Beranda';
+import Stack_nav from './Stack_nav';
 import Lainnya from './Lainnya';
 
 //screens names
-const detailName= 'Detail';
+const Daftar_PesananName= 'Daftar_Pesanan';
 const bayarName= 'Bayar';
-const berandaName ='Menu_Awal'
-const lainnyaName ='Lainnya'
+const berandaName ='Menu_Awal';
+const lainnyaName ='Lainnya';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,13 +24,13 @@ export default function MainContainer(){
             <Tab.Navigator
             initialRouteName='Menu_awal' screenOptions={{tabBarActiveTintColor: '#00579C',headerShown:false}}>
 
-            <Tab.Screen name ={berandaName} component={Menu_awal} options={{
+            <Tab.Screen name ={berandaName} component={Stack_nav} options={{
                                                                         tabBarLabel: 'Beranda',
                                                                         tabBarIcon: ({ color, size }) => (
                                                                         <Fontisto name="home" size={24} color={color} />
                                                                         ),
             }}/>
-            <Tab.Screen name ={detailName} component={Detail} options={{ headerShown:true,
+            <Tab.Screen name ={Daftar_PesananName} component={Daftar_Pesanan} options={{ headerShown:true,
                                                                         headerTitle:'Daftar Pemesanan',
                                                                         headerStyle:{backgroundColor:'#00579C',},
                                                                         headerTitleStyle:{color:'white'},
@@ -38,7 +39,12 @@ export default function MainContainer(){
                                                                         tabBarIcon: ({ color, size }) => (
                                                                         <FontAwesome5 name="book" size={24} color={color} />),
             }}/>
-            <Tab.Screen name ={bayarName} component={Bayar} options={{ 
+            <Tab.Screen name ={bayarName} component={Bayar} options={{ headerShown:true,
+                                                                        headerTitle:'Daftar Pembatalan',
+                                                                        headerStyle:{backgroundColor:'#00579C',},
+                                                                        headerTitleStyle:{color:'white'},
+                                                                        headerTitleAlign:'center',
+                                                                        tabBarLabel: 'Pesanan Saya',
                                                                         tabBarLabel: 'Pembatalan', 
                                                                         tabBarIcon: ({ color, size }) => (
                                                                         <Fontisto name="credit-card" size={24} color={color} />),
@@ -48,6 +54,7 @@ export default function MainContainer(){
                                                                         tabBarIcon: ({ color, size }) => (
                                                                         <FontAwesome5 name="bars" size={24} color={color} />),
             }}/>
+            
             </Tab.Navigator>
         </NavigationContainer>
     );

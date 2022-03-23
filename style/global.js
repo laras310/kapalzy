@@ -86,13 +86,14 @@ const styles = StyleSheet.create({
         margin:35,
         backgroundColor:'#E9E9E9',
         borderRadius:4,
-        padding:27,
+        paddingHorizontal:27,
         borderWidth:0.5,
     },
 
     subt_ps:{
         fontSize:18,
         fontWeight:'bold',
+        marginVertical:27,
         marginHorizontal:30,
         color:'black',
 

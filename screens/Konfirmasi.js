@@ -3,8 +3,7 @@ import React from 'react';
 import styles from '../style/global';
 import { Fontisto, Feather} from '@expo/vector-icons';
 
-
-export default function Menu_awal({navigation}){
+export default function Konfirmasi({navigation}){
     console.log('aplikasi berjalan')
     return(
         <SafeAreaView style={styles.container}>
@@ -12,14 +11,6 @@ export default function Menu_awal({navigation}){
                 
                 <Text style={styles.title}>Kapalzy</Text>
 
-                <Text style={styles.sub_title}>Pelabuhan Awal</Text>
-                <View style={styles.input}>
-                    <Fontisto name="ship" size={24} color="#9D9D9D" />
-                    <TextInput placeholder='Pilih Pelabuhan Awal'
-                    placeholderTextColor={'black'}
-                    style={styles.txtinput}></TextInput>
-                </View>
-                
                 
                 <Text style={styles.sub_title}>Pelabuhan Tujuan</Text>
                 <View style={styles.input}>
@@ -45,23 +36,8 @@ export default function Menu_awal({navigation}){
                     style={styles.txtinput}></TextInput>
                 </View>
 
-                <Text style={styles.sub_title}>Jam Masuk Pelabuhan</Text>
-                <View style={styles.input}>
-                    <Feather name="clock" size={21} color="#9D9D9D" />
-                    <TextInput placeholder='Pilih Jam Masuk'
-                    placeholderTextColor={'black'}
-                    style={styles.txtinput}></TextInput>
-                </View>
-
-                <View >
-                    <TextInput placeholder='Dewasa'
-                    placeholderTextColor={'black'}
-                    style={styles.juml}></TextInput>
-                </View>
-
-                <TouchableOpacity   style={styles.button}
-                                    onPress={()=>navigation.navigate("Konfirmasi")}
-                                    >
+                <TouchableOpacity style={styles.button} 
+                 onPress={()=>navigation.navigate("Detail")}>
                     <Fontisto name="search" size={24} color="#FFFFFF"/>
                     <View style={styles.txt_but_around}>
                         <Text style={styles.txtbutt}>
