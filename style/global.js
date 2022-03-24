@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
 
 const styles = StyleSheet.create({
     container:{
@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
         flex :1, 
         alignContent:'center',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        paddingTop: StatusBar.currentHeight,
     },
 
     cont2:{
@@ -63,37 +64,44 @@ const styles = StyleSheet.create({
         padding:10,
         height:40,
         marginVertical:15,
+        borderColor:'#00579C'
     },
 
     button:{
         flexDirection:'row',
         alignItems: 'center',
-        borderWidth:0.5,
         borderRadius:5,
         justifyContent:'center',
         padding:15,
         backgroundColor:'#EE9E54',
         marginBottom:30,
-        marginTop:10
+        marginTop:10,
     },
     txtbutt:{
         color:'#FFFFFF',
         fontSize:20,
         paddingHorizontal:10
-        // alignSelf:'center'
     },
     cont3:{
-        margin:35,
+        marginVertical:20,
+        marginHorizontal:35,
         backgroundColor:'#E9E9E9',
         borderRadius:4,
         paddingHorizontal:27,
         borderWidth:0.5,
     },
-
+    cont4:{
+        marginVertical:20,
+        // marginHorizontal:10,
+        backgroundColor:'#E9E9E9',
+        borderRadius:4,
+        paddingHorizontal:27,
+        borderWidth:0.5,
+    },
     subt_ps:{
         fontSize:18,
         fontWeight:'bold',
-        marginVertical:27,
+        margin:27,
         marginHorizontal:30,
         color:'black',
 
@@ -103,7 +111,125 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1, 
         alignSelf:'stretch',
         width: "100%",
+    },
+
+    txt_btl:{
+        color:'#00579C', 
+        fontWeight:'bold',
+        fontSize:20,
+        marginVertical:25,
+    },
+    subt_dp:{
+        fontSize:16,
+        fontWeight:'bold',
+        // marginBottom:5,
+        color:'black',
+
+    },
+    subt2_dp:{
+        fontSize:12,
+        marginVertical:5,
+        color:'black',
+
+    },
+    tampil_dtl:{
+        borderBottomColor:'#00579C',
+        borderWidth:0.5,
+        borderRadius:5,
+        alignSelf:'stretch',
+        height:37,
+        borderColor:'#00579C'
     }
+    ,content_pes:{
+        marginBottom:27,
+    },
+    txt_but_around:{
+        marginHorizontal:50,
+    },
+    total:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+    },
+    button2:{
+        borderColor:'#00579C',
+        borderWidth:2,
+        borderRadius:5,
+        padding:15,
+        backgroundColor:'white',
+        marginBottom:30,
+        marginTop:10,
+    },
+    button3:{
+        borderRadius:5,
+        padding:15,
+        backgroundColor:'#00579C',
+        marginBottom:30,
+        marginTop:10,
+    },
+    txtbutt2:{
+        color:'#00579C',
+        fontSize:20,
+        paddingHorizontal:10
+    },
+    txtbutt3:{
+        color:'#FFFFFF',
+        fontSize:20,
+        paddingHorizontal:10
+    },
+
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22,
+        
+      },
+      modalView: {
+        // flex:1,
+        margin: 20,
+        backgroundColor: "#C4C4C4",
+        borderRadius: 10,
+        // padding: 1,
+        // alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+        
+      },
+      modalHeader:{
+        backgroundColor:'#EE9E54',
+        padding:10,
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10,
+      },
+      button1: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+        width:100,
+        alignSelf:'center',
+      },
+      buttonOpen: {
+        backgroundColor: "#F194FF",
+      },
+      buttonClose: {
+        backgroundColor: "#2196F3",
+      },
+      textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+      },
+      modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+      }
+  
   
 });
 export default styles;

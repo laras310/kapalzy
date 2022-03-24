@@ -4,11 +4,11 @@ import * as React from 'react';
 //Screens
 import Konfirmasi from './Konfirmasi';
 import Beranda from './Beranda';
-import Detail_pesanan from './Detail_Pesan';
+import Detail_pesanan from './Detail_Pesanan';
 
 const konfirmasiName = 'Konfirmasi';
 const berandaName ='Beranda';
-const detailName = 'Detail'
+const detailName = 'Detail_pesanan'
 
 const Stack = createNativeStackNavigator();
 

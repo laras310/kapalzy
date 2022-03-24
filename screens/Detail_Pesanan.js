@@ -1,16 +1,15 @@
-import { Text, View, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
-import React from 'react';
+import * as React from 'react';
+import {View,Text,TouchableOpacity,TextInput, SafeAreaView, ScrollView} from 'react-native';
 import styles from '../style/global';
+
 import { Fontisto, Feather} from '@expo/vector-icons';
 
-export default function Konfirmasi({navigation}){
-    console.log('aplikasi berjalan')
+export default function Detail_pesanan({navigation}){
     return(
         <SafeAreaView style ={styles.container}>
             <View style={styles.cont2}>
                 <Text style={styles.title}>Kapalzy</Text>
-                <Text style={[styles.subt_dp,{marginBottom:20}]}>Kuota Tersedia</Text>
-                <Text style={styles.subt_dp}>Rincian Tiket</Text>
+                <Text style={styles.subt_dp}>Informasi Pemesanan</Text>
                 
                 <View style={styles.cont4}>
                     <View style={[styles.input]}>
@@ -31,28 +30,35 @@ export default function Konfirmasi({navigation}){
                     
                 </View>
                 
-                <View style={styles.total}>
-                    <Text style={[styles.subt_dp,{fontSize:19}]}>Total</Text>
-                    <Text style={[styles.subt_dp,{fontSize:19}]}>xxxx</Text>
+
+                <Text style={styles.subt_dp}>Data Pemesan</Text>
+                
+                <Text style={styles.subt2_dp}>Nama Lengkap</Text>
+                <View style={styles.tampil_dtl}>
+                    <Text ></Text>
                 </View>
                 
-                <View style={[styles.total,{marginTop:30,}]}>
-                    <TouchableOpacity   style={styles.button2}
-                                        onPress={()=>navigation.navigate("Beranda")}>
-                        <Text style={styles.txtbutt2}>
-                            Kembali
+                <Text style={styles.subt2_dp}>Identitas</Text>
+                <View style={styles.tampil_dtl}>
+                    <Text ></Text>
+                </View>
+
+                <Text style={styles.subt2_dp}>Umur</Text>
+                <View style={styles.tampil_dtl}>
+                    <Text ></Text>
+                </View>
+                
+                <View style={styles.txt_but_around}>
+                    <TouchableOpacity   style={styles.button}
+                                        // onPress={()=>navigation.navigate("Konfirmasi")}
+                                        >
+                        <Text style={styles.txtbutt}>
+                            Submit
                         </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity   style={styles.button3}
-                                        onPress={()=>navigation.navigate("Detail_pesanan")}>
-                        <Text style={styles.txtbutt3}>
-                            Lanjutkan
-                        </Text>
-                    </TouchableOpacity>
+                        
+                    </TouchableOpacity>    
                 </View>
             </View>   
-            
-             
         </SafeAreaView>
         
     );

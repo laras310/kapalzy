@@ -6,13 +6,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //import screens
 import Daftar_Pesanan from './Daftar_Pesanan';
-import Bayar from './Bayar';
+import Batal from './Batal';
 import Stack_nav from './Stack_nav';
 import Lainnya from './Lainnya';
 
 //screens names
 const Daftar_PesananName= 'Daftar_Pesanan';
-const bayarName= 'Bayar';
+const batalName= 'Batal';
 const berandaName ='Menu_Awal';
 const lainnyaName ='Lainnya';
 
@@ -39,7 +39,7 @@ export default function MainContainer(){
                                                                         tabBarIcon: ({ color, size }) => (
                                                                         <FontAwesome5 name="book" size={24} color={color} />),
             }}/>
-            <Tab.Screen name ={bayarName} component={Bayar} options={{ headerShown:true,
+            <Tab.Screen name ={batalName} component={Batal} options={{ headerShown:true,
                                                                         headerTitle:'Daftar Pembatalan',
                                                                         headerStyle:{backgroundColor:'#00579C',},
                                                                         headerTitleStyle:{color:'white'},

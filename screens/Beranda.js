@@ -1,14 +1,16 @@
-import { Text, View, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
+import { Text, View, SafeAreaView, TextInput, TouchableOpacity, Modal} from 'react-native';
 import React, {useState} from 'react';
 import styles from '../style/global';
 import { Fontisto, Feather} from '@expo/vector-icons';
-// import DatePicker from 'react-native-date-picker'
-
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 
 export default function Menu_awal({navigation}){
     console.log('aplikasi berjalan');
+    const [modal,setModal] = useState(false);
+
+
+
     const [date, setDate] = useState(new Date());
     const [show, setShow] = useState(false);
     const [mode, setMode] = useState('date');
@@ -16,21 +18,29 @@ export default function Menu_awal({navigation}){
     const [timeText, setTimeText]= useState('Pilih Jam Masuk')
 
     const onChange =(event, selectedDate) =>{
-        const currDate= selectedDate || date;
-        
-        setDate(currDate);
-        setShow(false);
-        
-        let temp=new Date(currDate);
         
         if (mode=='date') {
-            let fdate = temp.getDate() + '-' + (temp.getMonth()+1) + '-' + temp.getFullYear();
-            setdateText(fdate);
-            console.log(fdate);
+            const currDate= selectedDate || dateText;
+            setShow(false);
+            if(currDate!=dateText){
+                setDate(currDate);
+                let temp=new Date(currDate);
+                let fdate = temp.getDate() + '-' + (temp.getMonth()+1) + '-' + temp.getFullYear();
+                setdateText(fdate);
+                console.log(fdate);
+            }
+
         } else if(mode=='time') {
-            let ftime = temp.getHours() + ':' + temp.getMinutes();
-            setTimeText(ftime);
-            console.log(ftime+' '+mode);
+            const currDate= selectedDate || timeText;
+            setShow(false);
+            if(currDate!=timeText){
+                setDate(currDate);
+                let temp=new Date(currDate);
+                let ftime = temp.getHours() + ':' + temp.getMinutes();
+                setTimeText(ftime);
+                console.log(ftime+' '+mode);    
+            }
+            
         }
         
     };
@@ -57,7 +67,8 @@ export default function Menu_awal({navigation}){
                 <Text style={styles.sub_title}>Pelabuhan Awal</Text>
                 <View style={styles.input}>
                     <Fontisto name="ship" size={24} color="#9D9D9D" />
-                    <TouchableOpacity style={styles.input}>
+                    <TouchableOpacity style={styles.input} onPress={()=> setModal(!modal)}
+>
                         <Text style={styles.txtinput}>Pilih Pelabuhan Awal</Text>
                     </TouchableOpacity>
                     
@@ -103,7 +114,6 @@ export default function Menu_awal({navigation}){
                     >
                         <Text style={styles.txtinput}>{timeText}</Text>
                     </TouchableOpacity>
-                    {/* <DateTimePickerModal mode='time'/> */}
                 </View>
 
                 {show && (
@@ -112,24 +122,71 @@ export default function Menu_awal({navigation}){
                     mode={mode} is24Hour={true}  onChange={onChange} on/>
                 )}
                 
-
+                <TouchableOpacity style={[{width:320,height:40,marginTop:10,marginLeft:10,padding:10,flexDirection:'row',backgroundColor:'#EFF4F4',borderRadius:4, borderColor:'black',}]}>
+                                <View>
+                                    <Text style={[{color:'black', fontSize:14, lineHeight:19, fontWeight:'bold', textAlign:'left'}]}>
+                                        Dewasa
+                                    </Text>
+                                </View>
+                                <View style={[{marginLeft:200, flexDirection:'row',}]}>
+                                    <Text style={[{color:'black', fontSize:14, lineHeight:19, fontWeight:'bold', textAlign:'right'}]}>
+                                        1
+                                    </Text>
+                                    <Text style={[{color:'black', fontSize:14, lineHeight:19, fontWeight:'bold', textAlign:'right'}]}>
+                                        Orang
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
                 <View >
                     <TextInput placeholder='Dewasa'
                     placeholderTextColor={'black'}
                     style={styles.juml}></TextInput>
                 </View>
-
-                <TouchableOpacity   style={styles.button}
-                                    onPress={()=>navigation.navigate("Konfirmasi")}
-                                    >
-                    <Fontisto name="search" size={24} color="#FFFFFF"/>
-                    <View style={styles.txt_but_around}>
+                
+                <View style={styles.txt_but_around}>
+                    <TouchableOpacity   style={styles.button}
+                                        onPress={()=>navigation.navigate("Konfirmasi")}
+                                        >
+                        <Fontisto name="search" size={24} color="#FFFFFF"/>
+                        
                         <Text style={styles.txtbutt}>
                             Buat Tiket
                         </Text>
-                    </View>
-                    
-                </TouchableOpacity>
+                        
+                    </TouchableOpacity>    
+                </View>
+                
+                <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modal}
+                        onRequestClose={() => {
+                        // Alert.alert("Modal has been closed.");
+                        setModal(!modal);
+                        }}
+                    >
+                    <View style={styles.centeredView}>
+                            <View style={styles.modalView}>
+                                <View style={styles.modalHeader}>
+                                    <Text style={[{color:'#FFF', textAlign:'center', fontSize:13, marginLeft:100, marginRight:100, fontWeight:'bold'}]}>
+                                        PILIH LAYANAN
+                                    </Text>
+                                </View>
+                                <View style={[{padding:20,}]}>
+                                    <TouchableOpacity style={[{marginBottom:15,}]} onPress={() => setModal(!modal)}>
+                                        <Text style={[{ fontSize:16 }]}>
+                                            Express
+                                        </Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={[{marginBottom:15,}]} onPress={() => setModal(!modal)}>
+                                        <Text style={[{ fontSize:16 }]}>
+                                            Reguler
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+</View>
+                        </View>
+                    </Modal>
 
             </View>
 
