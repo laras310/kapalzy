@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         paddingTop: StatusBar.currentHeight,
+        marginVertical:70,
     },
 
     cont2:{
@@ -58,6 +59,8 @@ const styles = StyleSheet.create({
         borderColor:'#00579C',
     },
     juml:{
+        flexDirection:'row',
+        justifyContent:'space-between',
         width:347,
         borderWidth:0.5,
         borderRadius:5,
@@ -184,51 +187,50 @@ const styles = StyleSheet.create({
         marginTop: 22,
         
       },
-      modalView: {
-        // flex:1,
-        margin: 20,
-        backgroundColor: "#C4C4C4",
-        borderRadius: 10,
-        // padding: 1,
-        // alignItems: "center",
+
+    modalView: {
         shadowColor: "#000",
         shadowOffset: {
-          width: 0,
-          height: 2
+        width: 10,
+        height: 10,
         },
-        shadowOpacity: 0.25,
+        shadowOpacity: 0.5,
         shadowRadius: 4,
-        elevation: 5,
-        
-      },
-      modalHeader:{
+        elevation: 20,
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 10,
+    },
+
+    modalHeader:{
         backgroundColor:'#EE9E54',
         padding:10,
         borderTopLeftRadius:10,
         borderTopRightRadius:10,
-      },
-      button1: {
+    },
+    
+    button1: {
         borderRadius: 20,
         padding: 10,
         elevation: 2,
         width:100,
         alignSelf:'center',
-      },
-      buttonOpen: {
+    },
+    buttonOpen: {
         backgroundColor: "#F194FF",
-      },
-      buttonClose: {
+    },
+    buttonClose: {
         backgroundColor: "#2196F3",
-      },
-      textStyle: {
+    },
+    textStyle: {
         color: "white",
         fontWeight: "bold",
         textAlign: "center"
-      },
-      modalText: {
+    },
+    modalText: {
         marginBottom: 15,
         textAlign: "center"
-      }
+    }
   
   
 });

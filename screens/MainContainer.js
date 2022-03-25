@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Fontisto,FontAwesome5} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-
 //import screens
 import Daftar_Pesanan from './Daftar_Pesanan';
 import Batal from './Batal';

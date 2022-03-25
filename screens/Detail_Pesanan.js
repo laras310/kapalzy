@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {View,Text,TouchableOpacity,TextInput, SafeAreaView, ScrollView} from 'react-native';
 import styles from '../style/global';
-
-import { Fontisto, Feather} from '@expo/vector-icons';
+import KonfBayar from './PopUp/KonfBayar';
+import { Fontisto} from '@expo/vector-icons';
 
 export default function Detail_pesanan({navigation}){
     return(
@@ -48,16 +48,8 @@ export default function Detail_pesanan({navigation}){
                     <Text ></Text>
                 </View>
                 
-                <View style={styles.txt_but_around}>
-                    <TouchableOpacity   style={styles.button}
-                                        // onPress={()=>navigation.navigate("Konfirmasi")}
-                                        >
-                        <Text style={styles.txtbutt}>
-                            Submit
-                        </Text>
-                        
-                    </TouchableOpacity>    
-                </View>
+                <KonfBayar></KonfBayar>
+                
             </View>   
         </SafeAreaView>
         
