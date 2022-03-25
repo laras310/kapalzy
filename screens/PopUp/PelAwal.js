@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { Text, View, SafeAreaView, TextInput, TouchableOpacity, Modal} from 'react-native';
+import { Text, View, FlatList, TouchableOpacity, Modal} from 'react-native';
 import styles from '../../style/global';
-
+import {Pelabuhan,Layanan} from '../../database/Data';
 import { Fontisto, Feather} from '@expo/vector-icons';
 
 export default function PelAwal(){
@@ -11,6 +11,10 @@ export default function PelAwal(){
     const [paTxt, setpaTxt]=useState('Pilih Pelabuhan Awal');
     const [ptTxt, setptTxt]=useState('Pilih Pelabuhan Tujuan');
     const [layTxt, setlayTxt]=useState('Pilih Layanan');
+
+    const [awal,setAwal] = useState(Pelabuhan);
+    const [tujuan, setTujuan] =useState(Pelabuhan);
+    const [lay, setLay]=useState(Layanan)
 
     return(
             <View >
@@ -60,23 +64,20 @@ export default function PelAwal(){
                                 </Text>
                             </View>
                             <View style={[{padding:20,}]}>
-                                <TouchableOpacity style={[{marginBottom:15,}]} onPress={() => {setModal(!modal); setpaTxt('Bakauheni')}}>
-                                    <Text style={[{ fontSize:13 }]}>
-                                        Lampung
-                                    </Text>
-                                    <Text style={[{ fontSize:16 }]}>
-                                        Bakauheni
-                                    </Text>
-                                </TouchableOpacity>
-                                <View style={styles.Line}></View>
-                                <TouchableOpacity style={[{marginVertical:15,}]} onPress={() => {setModal(!modal); setpaTxt('Bakauheni')}}>
-                                    <Text style={[{ fontSize:13 }]}>
-                                        Lampung
-                                    </Text>
-                                    <Text style={[{ fontSize:16 }]}>
-                                        Bakauheni
-                                    </Text>
-                                </TouchableOpacity>
+                                <FlatList
+                                    data={awal}
+                                    keyExtractor={item =>item.Key}
+                                    renderItem={({item, index})=>{
+                                        return <View style={[{justifyContent:'center'}]}>
+                                                    <TouchableOpacity style={[{marginVertical:10,}]} onPress={() => {setModal(!modal); setpaTxt(item.plbh_nama)}}>
+                                                        <Text style={[{fontSize:13}]}>{item.plbh_kota}</Text>
+                                                        <Text style={[{fontSize:16}]}>{item.plbh_nama}</Text>
+                                                    </TouchableOpacity>
+                                                        <View style={styles.Line}/>
+                                                </View>
+                                    }}
+                                />
+                            
                             </View>
                         </View>
                     </View>
@@ -91,30 +92,30 @@ export default function PelAwal(){
                         setModal2(!modal2);
                         }} >
                     
-                    <View style={styles.centeredView}>
+                    <View 
+                    style={styles.centeredView}
+                    >
                         <View style={styles.modalView}>
                             <View style={styles.modalHeader}>
                                 <Text style={[{color:'#FFF', textAlign:'center', fontSize:13, marginLeft:100, marginRight:100, fontWeight:'bold'}]}>
-                                    PILIH LAYANAN
+                                    PILIH Pelabuhan
                                 </Text>
                             </View>
                             <View style={[{padding:20,}]}>
-                                <TouchableOpacity style={[{marginBottom:15,}]} onPress={() => {setModal2(!modal2); setptTxt('Bakauheni')}}>
-                                    <Text style={[{ fontSize:16 }]}>
-                                        Lampung
-                                    </Text>
-                                    <Text style={[{ fontSize:16 }]}>
-                                        Bakauheni
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={[{marginBottom:15,}]} onPress={() => {setModal2(!modal2); setptTxt('Bakauheni')}}>
-                                    <Text style={[{ fontSize:16 }]}>
-                                        Lampung
-                                    </Text>
-                                    <Text style={[{ fontSize:16 }]}>
-                                        Bakauheni
-                                    </Text>
-                                </TouchableOpacity>
+                                <FlatList
+                                    data={tujuan}
+                                    keyExtractor={item =>item.Key}
+                                    renderItem={({item, index})=>{
+                                        return <View style={[{justifyContent:'center'}]}>
+                                                    <TouchableOpacity style={[{marginVertical:10,}]} onPress={() => {setModal2(!modal2); setptTxt(item.plbh_nama)}}>
+                                                        <Text style={[{fontSize:13}]}>{item.plbh_kota}</Text>
+                                                        <Text style={[{fontSize:16}]}>{item.plbh_nama}</Text>
+                                                    </TouchableOpacity>
+                                                        <View style={styles.Line}/>
+                                                </View>
+                                    }}
+                                />
+                            
                             </View>
                         </View>
                     </View>
@@ -127,8 +128,9 @@ export default function PelAwal(){
                         onRequestClose={() => {
                         setModal3(!modal3);
                         }} >
-                    
-                    <View style={styles.centeredView}>
+                    <View 
+                    style={styles.centeredView}
+                    >
                         <View style={styles.modalView}>
                             <View style={styles.modalHeader}>
                                 <Text style={[{color:'#FFF', textAlign:'center', fontSize:13, marginLeft:100, marginRight:100, fontWeight:'bold'}]}>
@@ -136,16 +138,19 @@ export default function PelAwal(){
                                 </Text>
                             </View>
                             <View style={[{padding:20,}]}>
-                                <TouchableOpacity style={[{marginBottom:15,}]} onPress={() => {setModal3(!modal3); setlayTxt('Express')}}>
-                                    <Text style={[{ fontSize:16 }]}>
-                                        Express
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={[{marginBottom:15,}]} onPress={() => {setModal3(!modal3); setlayTxt('Reguler')}}>
-                                    <Text style={[{ fontSize:16 }]}>
-                                        Reguler
-                                    </Text>
-                                </TouchableOpacity>
+                                <FlatList
+                                    data={lay}
+                                    keyExtractor={item =>item.Key}
+                                    renderItem={({item, index})=>{
+                                        return <View style={[{justifyContent:'center'}]}>
+                                                    <TouchableOpacity style={[{marginVertical:10,}]} onPress={() =>{setModal3(!modal3); setlayTxt(item.layanan)}}>
+                                                        <Text style={[{fontSize:20,}]}>{item.layanan}</Text>
+                                                    </TouchableOpacity>
+                                                        <View style={styles.Line}/>
+                                                </View>
+                                    }}
+                                />
+                            
                             </View>
                         </View>
                     </View>
