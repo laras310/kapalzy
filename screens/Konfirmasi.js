@@ -2,7 +2,6 @@ import { Text, View, SafeAreaView, TextInput, TouchableOpacity} from 'react-nati
 import React,{useState} from 'react';
 import styles from '../style/global';
 import { Fontisto, Feather} from '@expo/vector-icons';
-import {Pesanan,Layanan,} from '../database/Data';
 
 export default function Konfirmasi({route,navigation}){
 

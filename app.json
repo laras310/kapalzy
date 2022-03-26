@@ -21,12 +21,15 @@
       "supportsTablet": true
     },
     "android": {
+      
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.laras123.kapalzy"
+      "package": "com.laras123.kapalzy",
+      "versionCode": 1
     },
+      
     "web": {
       "favicon": "./assets/favicon.png"
     }
