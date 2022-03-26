@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight:'bold',
         marginBottom:30,
-        lineHeight:35
+        lineHeight:35,
+        marginTop:15,
     },
 
     sub_title:{
@@ -69,7 +70,11 @@ const styles = StyleSheet.create({
         marginVertical:15,
         borderColor:'#00579C'
     },
-
+    jumlfix:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        marginVertical:15,
+    },
     button:{
         flexDirection:'row',
         alignItems: 'center',
@@ -141,7 +146,9 @@ const styles = StyleSheet.create({
         borderRadius:5,
         alignSelf:'stretch',
         height:37,
-        borderColor:'#00579C'
+        borderColor:'#00579C',
+        justifyContent:'center',
+        padding:5
     }
     ,content_pes:{
         marginBottom:27,
@@ -205,8 +212,8 @@ const styles = StyleSheet.create({
     modalHeader:{
         backgroundColor:'#EE9E54',
         padding:10,
-        borderTopLeftRadius:10,
-        borderTopRightRadius:10,
+        borderTopLeftRadius:5,
+        borderTopRightRadius:5,
     },
     
     button1: {
@@ -230,8 +237,18 @@ const styles = StyleSheet.create({
     modalText: {
         marginBottom: 15,
         textAlign: "center"
+    },
+  
+    menu:{
+        padding:30, 
+        borderColor:'#00579C', 
+        borderWidth: 0.5,
+        borderRadius:5
+    },
+    menutitle:{
+        textAlign:'center', 
+        fontWeight:'bold',
+        color:'#00579C'
     }
-  
-  
 });
 export default styles;

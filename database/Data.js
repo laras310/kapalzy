@@ -15,19 +15,19 @@ export const Pelabuhan =[
         Key:3,
         plbh_nama : 'Muara', 
         plbh_kota : 'Padang',
-        kuota: '1000'
+        kuota: '200'
     },
     {
         Key:4,
         plbh_nama : 'Malundung', 
         plbh_kota : 'Tarakan',
-        kuota: '1000'
+        kuota: '500'
     },
     {
         Key:5,
         plbh_nama : 'Trisakti', 
         plbh_kota : 'Banjarmasin',
-        kuota: '1000'
+        kuota: '800'
     }
 ]
 
@@ -35,33 +35,12 @@ export const Layanan=[
     {
         Key : 6,
         layanan:'Express',
+        Harga: '65000',
     },
     {
         Key :7,
-        layanan :'Reguler'
+        layanan :'Reguler',
+        Harga: '50000'
     }
     
-]
-
-export const Pemesan=[
-    {
-        Nama_pemesan : '',
-        Umur :'',
-        Identitas :'',
-        Kode_pemesan:''
-    }
-]
-
-export const Pesanan =[
-    {
-        Status : '',
-        Asal: '',
-        Tujuan: '',
-        Layanan:'',
-        Tgl :'',
-        Waktu:'',
-        Jumlah:'',
-        Total:'',
-        Kode_pemesan:'',
-    }
 ]

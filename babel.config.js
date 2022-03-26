@@ -4,3 +4,4 @@ module.exports = function(api) {
     presets: ['babel-preset-expo'],
   };
 };
+// Nurul aulia Larasati - 119140008
